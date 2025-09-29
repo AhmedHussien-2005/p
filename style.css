@@ -1,0 +1,1603 @@
+/* Reset عام */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body,
+html {
+    height: 100%;
+    width: 100%;
+    font-family: 'League Spartan', sans-serif;
+
+}
+
+/* سكشن الخلفية */
+.section1 {
+    width: 100%;
+    height: 100vh;
+    background-image: url("images/Untitled\ Project\ \(4\).jpg");
+    /* غير اسم الصورة حسب عندك */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    color: white;
+
+
+    
+
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    transition: transform 0.5s ease;
+    z-index: 999;
+}
+
+/* لما يختفي */
+.navbar.hide {
+    transform: translateY(-100%);
+}
+
+.logo img {
+    height: 50px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    /* مهم عشان الخط */
+    padding-bottom: 5px;
+    transition: color 0.4s ease;
+    /* تغيير اللون تدريجي */
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    /* سمك الخط */
+    width: 0;
+    /* يبدأ من صفر */
+    background-color: #ffd700;
+    /* اللون الدهبي */
+    transition: width 0.4s ease;
+}
+
+.nav-links a:hover {
+    color: #ffd700;
+    /* الكلمة تتحول للون أصفر */
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+    /* الخط يظهر من الشمال لليمين */
+}
+
+/* أيقونات السوشيال */
+.social-icons a {
+    color: #ddd;
+    margin-left: 20px;
+    font-size: 22px;
+    transition: all 0.3s ease;
+}
+
+/* تويتر */
+.social-icons a:hover .fa-twitter {
+    color: #1DA1F2;
+    text-shadow: 0 0 8px #1DA1F2, 0 0 15px #1DA1F2;
+}
+
+/* لينكد إن */
+.social-icons a:hover .fa-linkedin-in {
+    color: #0A66C2;
+    text-shadow: 0 0 8px #0A66C2, 0 0 15px #0A66C2;
+}
+
+/* فيسبوك */
+.social-icons a:hover .fa-facebook-f {
+    color: #1877F2;
+    text-shadow: 0 0 8px #1877F2, 0 0 15px #1877F2;
+}
+
+/* انستجرام */
+.social-icons a:hover .fa-instagram {
+    color: #C13584;
+    text-shadow: 0 0 8px #C13584, 0 0 15px #C13584;
+}
+
+/* النص + الصورة */
+.section1-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 100px;
+}
+
+.section1-text {
+    max-width: 80%;
+}
+
+.section1-text span.animate1 {
+    font-size: 90px;
+    font-family: 'League Spartan', sans-serif;
+
+}
+
+.animate1 {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: smoothUp 0.5s ease-out forwards;
+}
+
+@keyframes smoothUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate2 {
+  display: inline-block;
+  opacity: 0;
+  transform: scale(0.95) translateY(20px);
+  animation: elegantPop 0.5s ease forwards;
+  animation-delay: 0.5s;
+  color: #ffd700; /* اللون الدهبي بس */
+}
+
+@keyframes elegantPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05) translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0); /* ثابت */
+  }
+}
+
+
+.section1-text span.animate2 {
+    color: #ffd700;
+    font-size: 90px;
+
+    font-family: 'Cormorant Garamond', serif;
+
+}
+
+.features {
+    margin: 20px 0;
+
+}
+
+.features p {
+    border-left: 2px solid gray;
+    /* سمك ولون الخط */
+    padding-left: 15px;
+    /* المسافة بين الخط والنص */
+    margin: 20px 0;
+    line-height: 1.6;
+    color: #ccc;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* الزرار العام */
+.buttons a {
+    position: relative;
+    /* ضروري للـ pseudo-element */
+    display: inline-block;
+    padding: 12px 25px;
+    margin-right: 15px;
+    border-radius: 600px;
+    text-decoration: none;
+    font-weight: bold;
+    overflow: hidden;
+    /* يخلي الأنيميشن ما يخرجش */
+    z-index: 1;
+    transition: color 0.4s ease;
+}
+
+.buy-btn,
+.demo-btn {
+    position: relative;
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    overflow: hidden;
+    transition: color 0.3s ease;
+    z-index: 1;
+}
+
+/* زرار الشراء */
+.buy-btn {
+    background: #ffffff;
+    color: #000000;
+    border: 2px solid #ffffff;
+}
+
+/* زرار الديمو */
+.demo-btn {
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    background: transparent;
+}
+
+/* الأنيميشن الشباك */
+.buy-btn::before,
+.demo-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    /* يبدأ من النص */
+    width: 100%;
+    height: 100%;
+    background: #FFD700;
+    transform: translateX(-50%) scaleX(0);
+    /* متصفر في البداية */
+    transform-origin: center;
+    /* يفتح من النص */
+    transition: transform 0.4s ease;
+    z-index: -1;
+    /* تحت الكلام */
+}
+
+/* عند الهوفر */
+.buy-btn:hover::before,
+.demo-btn:hover::before {
+    transform: translateX(-50%) scaleX(1);
+    /* يفتح للخارج */
+}
+
+/* تغيير لون النص */
+.buy-btn:hover {
+    color: #111;
+}
+
+.demo-btn:hover {
+    color: #000;
+}
+
+
+/* الصورة */
+.section1-img img {
+    max-width: 600px;
+}
+
+
+/* Section 2 */
+.section2 {
+    background: #fff;
+    color: #000;
+    padding: 150px 200px;
+}
+
+.section2-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 80px;
+}
+
+/* النص */
+.section2-text {
+    flex: 1;
+}
+
+.section2-text .subtitle {
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: #666;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.section2-text h2 {
+    font-size: 42px;
+    line-height: 1.3;
+    margin-bottom: 30px;
+}
+
+.buy-btn-outline {
+    display: inline-block;
+    padding: 12px 30px;
+    border: 2px solid #000;
+    border-radius: 50px;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.buy-btn-outline:hover {
+    background: #000;
+    color: #fff;
+}
+
+/* الكروت */
+.features-grid {
+    flex: 1.5;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* عمودين */
+    gap: 40px;
+}
+
+
+/* البوكس */
+.feature-box {
+    border: 1px solid #eee;
+    padding: 30px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.feature-box i {
+    font-size: 32px;
+    margin-bottom: 15px;
+    display: block;
+    color: #000;
+    transition: color 0.3s ease;
+    /* انسيابية اللون */
+}
+
+.feature-box h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #000;
+    transition: color 0.3s ease;
+    /* ✅ عشان يتغير مع الهوفر */
+}
+
+.feature-box p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* الهوفر */
+.feature-box:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.feature-box:hover i,
+.feature-box:hover h3 {
+    color: #2c3e94;
+    /* ✅ موف */
+}
+
+
+.scroll-top {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: -35px;
+    /* يدمج الزرار بين السكشنين */
+    z-index: 50;
+}
+
+/* الدائرة البيضا */
+.scroll-top .circle-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 44%;
+    background: #fff;
+    z-index: 1;
+}
+
+/* الزرار الأسود */
+.scroll-top a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #000;
+    /* أسود */
+    color: #fff;
+    /* سهم أبيض */
+    font-size: 26px;
+    text-decoration: none;
+    z-index: 2;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Section 3 */
+.section3 {
+    background: #111;
+    color: #fff;
+    padding: 150px 200px;
+    text-align: center;
+}
+
+.section3 h2 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.section3 .subtitle {
+    font-size: 18px;
+    color: #aaa;
+    margin-bottom: 60px;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.tool-box {
+    background: #1b1b1b;
+    padding: 40px 25px;
+    border-radius: 14px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.tool-box img {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 20px;
+}
+
+.tool-box h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.tool-box p {
+    font-size: 15px;
+    color: #ccc;
+    line-height: 1.5;
+}
+
+.tool-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+/* Button link */
+.more-btn {
+    display: inline-block;
+    background: #fff;
+    color: #111;
+    padding: 14px 32px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.more-btn:hover {
+    background: #f4f4f4;
+    transform: scale(1.05);
+}
+
+
+
+
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.tool-box {
+    background: #1b1b1b;
+    padding: 40px 25px;
+    border-radius: 14px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.tool-box img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+}
+
+.tool-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+.more-btn {
+    position: relative;
+    display: inline-block;
+    background: #fff;
+    color: #111;
+    padding: 14px 32px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    overflow: hidden;
+    /* مهم عشان الانيميشن ما يطلعش برا */
+    z-index: 1;
+    transition: color 0.3s ease;
+}
+
+/* الطبقة اللي هتعمل الشباك */
+.more-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: #ffd700;
+    /* لون الشباك */
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
+    transition: transform 0.4s ease;
+    z-index: -1;
+    border-radius: 30px;
+}
+
+/* عند الهوفر */
+.more-btn:hover::before {
+    transform: translateX(-50%) scaleX(1);
+}
+
+.more-btn:hover {
+    color: #000000;
+    /* النص يتحول لأبيض */
+}
+
+
+
+.projects-section {
+    background: #fff;
+    padding: 150px 80px; /* بدل 200px نخليها أقل */
+    text-align: center;
+    color: #000;
+}
+
+.projects-section h2 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.projects-subtitle {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.project-filters {
+    background: #ffd700;
+    border-radius: 50px;
+    display: inline-flex;
+    gap: 15px;
+    padding: 10px 20px;
+    margin-bottom: 50px;
+
+    position: sticky;
+    top: 20px;
+    z-index: 10;
+
+    transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+}
+
+/* الحالة العادية */
+.project-filters.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* حالة الاختفاء */
+.project-filters.hide {
+    transform: translateY(-70px);
+    opacity: 0;
+}
+
+
+.project-filters .filter-btn {
+    background: transparent;
+    border: 1.5px solid #000;
+    /* ✅ بوردر أسود */
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #000;
+}
+
+.project-filters .filter-btn.active,
+.project-filters .filter-btn:hover {
+    background: #000;
+    color: #fff;
+    border-color: #000;
+    /* تأكيد إن البوردر يفضل أسود */
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    
+}
+
+.project-card {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: auto;
+}
+
+.project-card.hidden {
+  opacity: 0;
+  transform: translateY(30px) scale(0.9);
+  pointer-events: none;
+  display: none !important; /* يضمن الإخفاء الكامل */
+}
+
+/* باقي CSS مثل الصورة، overlay، الزرار، فلترة الزرار ... */
+
+
+
+
+
+
+.project-img {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.project-img img {
+    height: 310px;
+    /* حجم الصورة */
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+    transition: transform 0.3s ease;
+
+      width: 100%;
+    height: auto; /* يخلي الصورة تحافظ على نسبة العرض للارتفاع */
+    margin: 0 auto; /* يوسطن الصور داخل الكارد */
+}
+
+/* الوصف تحت الصورة */
+.project-desc {
+    margin-top: 10px;
+    /* ✅ مسافة أكبر بين الصورة والكلام */
+    font-size: 20px;
+    /* ✅ حجم خط أكبر */
+    font-weight: 500;
+    /* ✅ Bold جدًا */
+    color: #000;
+    /* ✅ أسود صريح */
+    font-family: 'League Spartan', sans-serif;
+}
+
+/* Hover Overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(128, 128, 128, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 12px;
+}
+
+.project-img:hover .overlay {
+    opacity: 1;
+}
+
+/* الزرار */
+.view-btn {
+    background: #000;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.view-btn:hover {
+    background: #000000;
+    transform: scale(1.05);
+
+}
+
+
+
+
+
+.pricing-section {
+    background: #111;
+    /* ✅ خلفية سوداء */
+    padding: 120px 200px;
+    color: #fff;
+    /* النصوص الافتراضية تبقى بيضاء */
+}
+
+.pricing-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 80px;
+}
+
+/* الجزء الشمال */
+.pricing-left {
+    flex: 1;
+    position: sticky;
+    top: 120px;
+    /* المسافة من فوق */
+    align-self: flex-start;
+}
+
+.pricing-left h2 {
+    font-size: 42px;
+    margin-bottom: 15px;
+    color: #fff;
+    /* عنوان أبيض */
+}
+
+.pricing-left p {
+    color: #ccc;
+    /* وصف رمادي فاتح */
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.benefits {
+    list-style: none;
+}
+
+.benefits li {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #fff;
+    /* النقاط أبيض */
+}
+
+.benefits li::before {
+    content: "✔";
+    color: #FFD700;
+    /* علامة صح خضرا */
+    margin-right: 8px;
+}
+
+/* الجزء اليمين */
+.pricing-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.service-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #333;
+    /* خط فاصل غامق */
+    padding-bottom: 20px;
+}
+
+.service-box img {
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+    border-radius: 1200px;
+}
+
+.service-box h3 {
+    flex: 1;
+    font-size: 18px;
+    margin: 0;
+    color: #fff;
+    /* اسم الخدمة أبيض */
+}
+
+.tag {
+    background: #fff;
+    /* خلفية بيضاء */
+    color: #000;
+    /* نص أسود */
+    font-size: 12px;
+    padding: 5px 12px;
+    border-radius: 6px;
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+.save {
+    font-size: 14px;
+    color: #ffffff;
+    /* السعر أخضر */
+}
+
+
+
+
+.testimonials-section {
+    padding: 100px 80px;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.testimonials-section h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #111;
+}
+
+.testimonials-section p {
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+
+.testimonials-grid {
+    column-count: 4;
+    /* عدد الأعمدة (ممكن تزود أو تقلل) */
+    column-gap: 30px;
+    /* المسافة بين الأعمدة */
+}
+
+.testimonial-card {
+    display: inline-block;
+    /* عشان يشتغل جوه الـ columns */
+    width: 100%;
+    margin: 0 0 30px;
+    /* مسافة تحت كل كارت */
+    background: #fff;
+    padding: 30px;
+    border-radius: 14px;
+}
+
+
+.testimonial-card {
+    display: inline-block;
+    width: 100%;
+    margin: 0 0 35px;
+    background: #fff;
+    padding: 40px;
+    border-radius: 18px;
+    border: 1px solid #ddd;
+    /* ✅ بوردر رمادي فاتح */
+}
+
+.testimonial-card h3 {
+    font-size: 28px;
+    /* عنوان أكبر */
+    margin-bottom: 18px;
+    color: #111;
+}
+
+.testimonial-card p {
+    font-size: 22px;
+    /* ✅ النص أكبر */
+    line-height: 1.9;
+    margin-bottom: 35px;
+    color: #333;
+}
+
+.author {
+    font-size: 20px;
+    /* اسم الكاتب أوضح */
+    font-weight: bold;
+    color: #000;
+}
+
+
+
+.about-section {
+    background: #111;
+    /* ✅ خلفية سوداء */
+    color: #fff;
+    /* النصوص باللون الأبيض */
+    padding: 100px 150px;
+}
+
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    font-size: 48px;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+.about-text h2 span {
+    color: #FFD700;
+    /* ✅ لون مميز للكلمة */
+}
+
+.about-text p {
+    font-size: 22px;
+    /* حجم الخط */
+    line-height: 1.5;
+    /* مسافة بين السطور */
+    margin-bottom: 25px;
+    color: #ddd;
+    max-width: 700px;
+    /* ✅ عرض محدود علشان السطر يبقى أقصر */
+}
+
+.about-illustration {
+    flex: 1;
+    text-align: center;
+}
+
+.about-illustration img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+
+/* Contact Section */
+.contact {
+    padding: 150px 20px;
+    background: #fff;
+    /* ✅ خلفية بيضا */
+    text-align: center;
+    color: #000;
+}
+
+.contact-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #FFD700;
+    margin-bottom: 15px;
+}
+
+.contact-subtitle {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 50px;
+    line-height: 1;
+
+}
+
+.contact-form {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    /* ✅ يخلي الزرار في النص */
+}
+
+.btn-contact {
+    position: relative;
+    display: inline-block;
+    padding: 15px 40px;
+    border: 2px solid #FFD700;
+    background: transparent;
+    color: #000000;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    overflow: hidden;
+    /* يخفي أي حاجة تطلع برا */
+    transition: color 0.3s ease, border-color 0.3s ease;
+    z-index: 1;
+}
+
+/* الشباك */
+.btn-contact::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: #FFD700;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
+    transition: transform 0.4s ease;
+    z-index: -1;
+    /* يخليه ورا الكلام */
+}
+
+/* وقت الهوفر */
+.btn-contact:hover {
+    color: #111;
+}
+
+.btn-contact:hover::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+
+/* الغلاف */
+.input-wrapper {
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.input-wrapper textarea {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    padding: 20px;
+    font-size: 1.4rem;
+    /* 👈 خط أكبر */
+    outline: none;
+    background: transparent;
+    color: #000;
+    resize: none;
+    /* يمنع التصغير/التكبير بالماوس */
+    min-height: 200px;
+    /* 👈 الطول أكبر */
+    line-height: 1.6;
+    /* 👈 راحة بين السطور */
+}
+
+
+/* المدخلات */
+.input-wrapper input,
+.input-wrapper textarea {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid transparent;
+    /* 👈 شفاف في الأول */
+    padding: 15px 0;
+    font-size: 1.2rem;
+    outline: none;
+    background: transparent;
+    color: #000;
+    resize: none;
+    position: relative;
+}
+
+/* خط التحميل */
+.input-wrapper::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    /* 👈 يبدأ من صفر */
+    background: #ccc;
+    /* 👈 اللون الرصاصي */
+    transition: width 1s ease;
+    /* 👈 الأنيميشن */
+}
+
+/* لما يظهر العنصر */
+.input-wrapper.animate::before {
+    width: 100%;
+    /* 👈 يكبر من الشمال لليمين */
+}
+
+
+/* خط الأنيميشن */
+.input-wrapper::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    height: 2px;
+    width: 100%;
+    background: #FFD700;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
+    transition: transform 0.4s ease;
+}
+
+/* لما العنصر جوا الـ wrapper ياخد focus */
+.input-wrapper:focus-within::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+
+
+
+
+.footer {
+    background: #111;
+    color: #fff;
+    padding: 60px 200px 30px;
+    font-family: 'League Spartan', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.footer-about {
+    flex: 1;
+}
+
+.footer-about h2 {
+    font-size: 28px;
+    color: #FFD700;
+    margin-bottom: 15px;
+}
+
+.footer-about p {
+    font-size: 15px;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.footer-social {
+    text-align: left;
+    /* ✅ يخلي الكلام والأيقونات على الشمال */
+}
+
+.footer-social h3 {
+    font-size: 20px;
+    color: #FFD700;
+    margin-bottom: 10px;
+    /* مسافة صغيرة بين العنوان والأيقونات */
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    /* ✅ يوسطن الأيقونات تحت Follow Me */
+    gap: 15px;
+    /* مسافة متساوية بين الأيقونات */
+}
+
+.social-icons a {
+    color: #ccc;
+    font-size: 22px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #FFD700;
+}
+
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    color: #aaa;
+}
+
+
+
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 55px;
+    height: 55px;
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FFD700, #ffcc33);
+    color: #000;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+
+    opacity: 0;
+    /* مخفي في الأول */
+    visibility: hidden;
+    /* مش متفاعل */
+    transform: translateY(20px);
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scroll-to-top.hide {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-5px) scale(1.1);
+    background: linear-gradient(135deg, #ffcc33, #FFD700);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-up,
+.slide-down {
+    opacity: 0;
+}
+
+.animate-up {
+    animation: slideUp 0.8s forwards;
+}
+
+.animate-down {
+    animation: slideDown 0.8s forwards;
+}
+
+.static {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+}
+
+
+@keyframes slideLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animate-left {
+    animation: slideLeft 0.8s forwards;
+}
+
+.animate-right {
+    animation: slideRight 0.8s forwards;
+}
+
+
+
+/* زر الهامبرجر */
+.menu-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 36px;
+  height: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 10002;
+
+  /* مخفي في البداية */
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.menu-toggle.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.menu-toggle span {
+  display: block;
+  height: 4px;
+  border-radius: 3px;
+  background: #FFD700;
+  transition: transform .25s ease, opacity .25s ease;
+}
+
+/* التحويل ل X */
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 6px);
+}
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+
+/* القائمة كمستطيل صغير يخرج من عند الهامبرجر */
+.side-menu {
+  position: fixed;
+  top: 62px;        /* تحت الهامبرجر بمسافة */
+  right: 20px;      /* عند نفس محاذاة الهامبرجر */
+  width: 360px;
+  background: rgba(10,10,10,0.98);
+  color: #FFD700;
+  padding: 54px 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  transform-origin: top right;
+  transform: scale(0.75) translateY(-8px);
+  opacity: 0;
+  transition: transform .36s cubic-bezier(.2,.9,.2,1), opacity .24s ease;
+  z-index: 10001;
+  pointer-events: none;
+}
+
+/* حالة الافتتاح — يكبر من عند الهامبرجر */
+.side-menu.open {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* روابط داخل المنيو */
+.side-menu ul { list-style: none; margin: 0; padding: 6px 0; }
+.side-menu ul li { margin: 12px 0; text-align: center; }
+.side-menu ul li a {
+  color: #FFD700;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+  transition: color .2s ease;
+  border-bottom: #333 1px solid;
+}
+.side-menu ul li a:hover { color: #ffffff; }
+
+/* overlay */
+.side-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.42);
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .25s ease, visibility .25s ease;
+}
+.side-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+
+
+
+
+/* شاشات أصغر (مثلاً لابتوب صغير أو تابليت) */
+@media (max-width: 1200px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr); /* عمودين بدل 3 */
+    }
+}
+
+/* شاشات موبايل */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr; /* عمود واحد */
+    }
+}
+
+/* الشاشات الكبيرة: 3 مشاريع */
+@media (min-width: 1440px) {
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* لابتوب متوسط - 1366px */
+@media (max-width: 1366px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr); /* عمودين */
+        justify-content: center; /* يظلوا في النص */
+    }
+}
+
+/* تابليت أصغر أو موبايل */
+@media (max-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: 1fr; /* عمود واحد */
+        justify-content: center;
+    }
+}
+
+
+
+
+/* موبايل صغير جدًا (iPhone SE / Android متوسط) */
+@media (max-width: 720px) {
+    .projects-grid {
+        grid-template-columns: 1fr; /* عنصر واحد لكل صف */
+        gap: 20px;
+        padding: 0 10px; /* يملأ العرض تقريبا */
+        margin: 0;
+    }
+
+    .project-card {
+        width: 100%; /* ياخد كامل عرض الـ grid */
+    }
+}
+
+
+
+
+
+/* ريسبونسيف Navbar والشاشات الصغيرة */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 1px; /* تصغير البادينج */
+        font-size: 14px;    /* تصغير الخط */
+        gap: 10px;         /* تقليل المسافة بين العناصر */
+        margin: 0 5px;    /* تقليل المارجن الجانبي */
+    }
+    
+    .nav-links
+    .nav-links li {
+        margin-left: 10px;  /* تقليل المسافة بين الروابط */
+    }
+
+    .social-icons a {
+        margin-left: 1px;  /* تقليل المسافة بين الأيقونات */
+        font-size: 18px;    /* تصغير حجم الأيقونات */
+    }
+
+    .section1-content {
+        padding: 10px;      /* تصغير البادينج العام */
+        gap: 1px;          /* تقليل المسافة بين النص والصورة */
+    }
+
+    .section2-container,
+    .features-grid,
+    .tools-grid,
+    .projects-grid,
+    .pricing-container,
+    .about-container {
+        gap: 20px; /* تقليل المسافة بين الكروت أو الأعمدة */
+    }
+
+    .section1-text span.animate1,
+    .section1-text span.animate2 {
+        font-size: 40px; /* تصغير النص الأساسي */
+    }
+
+    .buttons a,
+    .buy-btn,
+    .demo-btn,
+    .more-btn {
+        padding: 10px 20px; /* تصغير الزرار */
+        font-size: 16px;    /* تصغير خط الزرار */
+    }
+
+    .section1-content {
+        flex-direction: column; /* النص فوق والصورة تحت */
+        align-items: center;    /* نص وصورة في المنتصف */
+        padding: 100px;
+        gap: 2px;              /* مسافة بين النص والصورة */
+    }
+
+    .section1-text {
+        max-width: 100%;       /* النص ياخد كامل العرض */
+        text-align: center;     /* نص في المنتصف */
+    }
+
+    .section1-text span.animate1,
+    .section1-text span.animate2 {
+        font-size: 35px;       /* تصغير حجم النص */
+    }
+
+    .section1-img img {
+        max-width: 90%;        /* تصغير الصورة وتكون متناسبة */
+        height: auto;
+    }
+
+    
+}
